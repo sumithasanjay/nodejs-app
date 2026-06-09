@@ -1,9 +1,14 @@
-registration-form {
+.registration-form {
     background-color: aqua;
-     padding: 20%;
-     border-radius: 2px;
+     padding: 20px;
+     border-radius: 10px;
      display: grid;
      margin: auto;
      gap: 2px;
      grid-template-columns: 1fr 1fr;
+}
+.radio-group{
+    display: flex;
+    margin: 20px;
+    gap:10px;
 }
