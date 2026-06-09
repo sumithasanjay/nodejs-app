@@ -1,0 +1,9 @@
+registration-form {
+    background-color: aqua;
+     padding: 20%;
+     border-radius: 2px;
+     display: grid;
+     margin: auto;
+     gap: 2px;
+     grid-template-columns: 1fr 1fr;
+}
