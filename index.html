@@ -1,74 +1,88 @@
 <!DOCTYPE html>
-<link rel="stylesheet", href="css/style.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conference Registration</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-<html>
-    <head>
-        <title>
-            <h1>nodejs</h1>
-        </title>
-        
-    </head>
+  <header>
+    <img src="assests/dowimage1nload.webp" alt="Conference Logo" class="logo">
+    <h1>Tech Future 2025 - Registration</h1>
+    <p>Please fill out the form below to secure your spot!</p>
+  
+    <!-- Theme Toggle -->
+  <button id="theme-toggle" class="theme-btn">🌙 Dark Mode</button>
+</header>
 
-    <body>
-        <center>
-            <h1>App Registration Page</h1>
-            <hr>
-            <img src="assests/dowimage1nload.webp" width="40%">
-        </center>
-        <p>HELLO ....nodejs application!</p>
-    </body>
 
-    <div>
-        <form class="registration-form">
-            <fieldset>
-                <legend>personal information</legend>
-                <center>
-                <label for="name">FullName:</label>
-                <input type="text" id="name" name="fullName" placeholder="please enter your name" required>
-                <br>
-                <br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="Email" placeholder="please enter your email" required>
-<br>
-<br>
-                <label for="ph.no">Phone No:</label>
-                <input type="number" id="ph" name="phone No" placeholder="please enter your number" required>
-           <br>
-           <br>
-           </center>
-            </fieldset>
-        <br>
-        <br>
-<fieldset>
 
-<legend>Ticket Information</legend>
-<center>
-<label>Ticket Type</label>
 
-         <select id="Ticket-type" name="ticket" required>
-      <option value="">-- Select Event --</option>
-      <option value="VIP">VIP-20</option>
-      <option value="student">student-10</option>
-      <option value="employee">employee-05</option>
-    </select>
+  <main>
+    <form id="registration-form" class="registration-form" novalidate>
+      <!-- Personal Information -->
+      <fieldset>
+        <legend>Personal Information</legend>
 
-    
-<br>
-<br>
-<br>
-    <label>Meal Preferencce</label>
-    <div class=""radio-group">
-    <label><input type="radio" name="veg" value="veg" required>Vegetarian</label>
-    <label><input type="radio" name="non-veg" value="non-veg" required>NON_Vegetarian</label>
-    <label><input type="radio" name="vegan" value="vegan" required>Vegan</label>
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        <small class="error" id="name-error"></small>
 
-    </div>
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+        <small class="error" id="email-error"></small>
 
-    </fieldset>
-</center>
-    <br>
-    <br>
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="+91 9876543210" required>
+        <small class="error" id="phone-error"></small>
+      </fieldset>
 
+      <!-- Ticket Selection -->
+      <fieldset>
+        <legend>Ticket Details</legend>
+
+        <label for="ticket-type">Select Ticket Type *</label>
+        <select id="ticket-type" name="ticket-type" required>
+          <option value="">--Select--</option>
+          <option value="standard">Standard - $99</option>
+          <option value="vip">VIP - $199</option>
+          <option value="student">Student - $49</option>
+        </select>
+        <small class="error" id="ticket-error"></small>
+
+        <label>Meal Preference *</label>
+        <div class="radio-group">
+          <label><input type="radio" name="meal" value="veg" required> Vegetarian</label>
+          <label><input type="radio" name="meal" value="nonveg"> Non-Vegetarian</label>
+          <label><input type="radio" name="meal" value="vegan"> Vegan</label>
+        </div>
+        <small class="error" id="meal-error"></small>
+      </fieldset>
+
+      <!-- Additional -->
+      <fieldset>
+        <legend>Additional Information</legend>
+
+        <label for="comments">Special Requests</label>
+        <textarea id="comments" name="comments" rows="4" placeholder="Any special requirements?"></textarea>
+
+        <div class="checkbox-group">
+          <label><input type="checkbox" id="subscribe" name="subscribe"> Subscribe to newsletter</label>
+        </div>
+      </fieldset>
+
+      <!-- Submit -->
+      <button type="submit" class="submit-btn">Register Now</button>
     </form>
-    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tech Future Conference. All rights reserved.</p>
+  </footer>
+
+  <!-- JS Validation -->
+  <script src="js/validation.js"></script>
+</body>
 </html>
